@@ -1,35 +1,34 @@
 import {
-    settingsEndpoint,
     settingsOptions,
-    callbackType,
     newsRequest,
     sourcesItems,
     newsType,
     sourcesRequest,
-    callbackArgument,
 } from '../types';
+
+import { ApiEndpoints } from '../constants';
 
 export interface LoaderInterface {
     baseLink: string;
     options: settingsOptions;
-    getResp: (options: SettingsInterface, callback: callbackType<callbackArgument>) => void;
+    getResp: <T>(options: SettingsInterface, callback: (data: T) => void) => void;
     errorHandler: (res: Response) => Response;
-    makeUrl: (options: settingsOptions, endpoint: settingsEndpoint) => string;
-    load: (
+    makeUrl: (options: settingsOptions, endpoint: ApiEndpoints) => string;
+    load: <T>(
         method: string,
-        endpoint: settingsEndpoint,
-        callback: callbackType<callbackArgument>,
+        endpoint: ApiEndpoints,
+        callback: (data: T) => void,
         options?: settingsOptions
     ) => void;
 }
 
 export interface AppControllerInterface extends LoaderInterface {
-    getSources: (callback: callbackType<sourcesRequest>) => void;
-    getNews: (e: Event, callback: callbackType<newsRequest>) => void;
+    getSources: <T>(callback: (data: T) => void) => void;
+    getNews: <T>(e: Event, callback: (data: T) => void) => void;
 }
 
 export interface SettingsInterface {
-    endpoint: settingsEndpoint;
+    endpoint: ApiEndpoints;
     options?: settingsOptions;
 }
 

@@ -1,14 +1,6 @@
 export type settingsOptions = { [k: string]: unknown };
 
-export type settingsEndpoint = unknown;
-
 export type callbackType<T> = (data?: T) => void;
-
-export type callbackArgument = sourcesRequest | newsRequest | null;
-
-export type sourcesData = HTMLElement[];
-
-export type resType = Response;
 
 export type sourceType = { id: string; name: string };
 

@@ -1,13 +1,12 @@
 import AppLoader from './appLoader';
-import { callbackType, callbackArgument } from '../../types';
-import { Constants } from '../../constants';
+import { ApiEndpoints } from '../../constants';
 
 class AppController extends AppLoader {
-    getSources(callback: callbackType<callbackArgument>) {
-        super.getResp({ endpoint: Constants.Sources }, callback);
+    getSources<T>(callback: (data: T) => void) {
+        super.getResp({ endpoint: ApiEndpoints.Sources }, callback);
     }
 
-    getNews(e: Event, callback: callbackType<callbackArgument>) {
+    getNews<T>(e: Event, callback: (data: T) => void) {
         let target = e.target as HTMLElement;
         const newsContainer = e.currentTarget as HTMLElement;
 
@@ -16,7 +15,7 @@ class AppController extends AppLoader {
                 const sourceId = target.getAttribute('data-source-id') as string;
                 if (newsContainer.getAttribute('data-source') !== sourceId) {
                     newsContainer.setAttribute('data-source', sourceId);
-                    super.getResp({ endpoint: Constants.Everything, options: { sources: sourceId } }, callback);
+                    super.getResp({ endpoint: ApiEndpoints.Everything, options: { sources: sourceId } }, callback);
                 }
                 return;
             }
