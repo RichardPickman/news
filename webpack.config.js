@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const EslingPlugin = require('eslint-webpack-plugin');
+const EslintPlugin = require('eslint-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 const baseConfig = {
@@ -30,13 +29,13 @@ const baseConfig = {
         path: path.resolve(__dirname, '../dist'),
     },
     plugins: [
+        new Dotenv(),
+        new EslintPlugin({ extensions: 'ts' }),
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './src/index.html'),
             filename: 'index.html',
         }),
-        new CleanWebpackPlugin(),
-        new EslingPlugin({ extensions: 'ts' }),-
-        new Dotenv(),
     ],
 };
 
