@@ -1,10 +1,5 @@
 import { LoaderInterface, SettingsInterface } from '../../interfaces';
-import {
-    settingsOptions,
-    callbackType,
-    sourcesRequest,
-    newsRequest,
-} from '../../types';
+import { settingsOptions } from '../../types';
 
 class Loader implements LoaderInterface {
     baseLink;
@@ -38,21 +33,18 @@ class Loader implements LoaderInterface {
         const urlOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
-        Object.keys(urlOptions).forEach((key) => { url += `${key}=${urlOptions[key]}&` });
+        Object.keys(urlOptions).forEach((key) => {
+            url += `${key}=${urlOptions[key]}&`;
+        });
 
         return url.slice(0, -1);
     }
 
-    load<T>(
-        method: string,
-        endpoint: string,
-        callback: (data: T) => void,
-        options: settingsOptions = {}
-    ): void {
+    load<T>(method: string, endpoint: string, callback: (data: T) => void, options: settingsOptions = {}): void {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
-            .then((data: T) => callback(data))
+            .then(callback)
             .catch((err: Error) => console.error(err));
     }
 }

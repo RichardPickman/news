@@ -1,10 +1,4 @@
-import {
-    settingsOptions,
-    newsRequest,
-    sourcesItems,
-    newsType,
-    sourcesRequest,
-} from '../types';
+import { settingsOptions, newsRequest, sourcesItems, newsType, sourcesRequest } from '../types';
 
 import { ApiEndpoints } from '../constants';
 
@@ -14,12 +8,7 @@ export interface LoaderInterface {
     getResp: <T>(options: SettingsInterface, callback: (data: T) => void) => void;
     errorHandler: (res: Response) => Response;
     makeUrl: (options: settingsOptions, endpoint: ApiEndpoints) => string;
-    load: <T>(
-        method: string,
-        endpoint: ApiEndpoints,
-        callback: (data: T) => void,
-        options?: settingsOptions
-    ) => void;
+    load: <T>(method: string, endpoint: ApiEndpoints, callback: (data: T) => void, options?: settingsOptions) => void;
 }
 
 export interface AppControllerInterface extends LoaderInterface {
