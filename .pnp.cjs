@@ -33,7 +33,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["@types/node", "npm:18.0.0"],\
             ["@typescript-eslint/eslint-plugin", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:5.30.0"],\
             ["@typescript-eslint/parser", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:5.30.0"],\
             ["clean-webpack-plugin", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:3.0.0"],\
@@ -4684,7 +4683,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["news", "workspace:."],\
-            ["@types/node", "npm:18.0.0"],\
             ["@typescript-eslint/eslint-plugin", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:5.30.0"],\
             ["@typescript-eslint/parser", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:5.30.0"],\
             ["clean-webpack-plugin", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:3.0.0"],\
