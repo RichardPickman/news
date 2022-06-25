@@ -33,12 +33,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@types/node", "npm:18.0.0"],\
             ["@typescript-eslint/eslint-plugin", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:5.30.0"],\
             ["@typescript-eslint/parser", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:5.30.0"],\
             ["clean-webpack-plugin", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:3.0.0"],\
             ["copy-webpack-plugin", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:7.0.0"],\
             ["css-loader", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:5.2.7"],\
-            ["dotenv", "npm:16.0.1"],\
             ["dotenv-webpack", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:7.1.1"],\
             ["eslint", "npm:7.32.0"],\
             ["eslint-config-prettier", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:8.5.0"],\
@@ -2294,13 +2294,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["dotenv", [\
-        ["npm:16.0.1", {\
-          "packageLocation": "./.yarn/cache/dotenv-npm-16.0.1-d99e72bb95-f459ffce07.zip/node_modules/dotenv/",\
-          "packageDependencies": [\
-            ["dotenv", "npm:16.0.1"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:8.6.0", {\
           "packageLocation": "./.yarn/cache/dotenv-npm-8.6.0-2ce3e9f7bb-38e902c80b.zip/node_modules/dotenv/",\
           "packageDependencies": [\
@@ -4683,12 +4676,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["news", "workspace:."],\
+            ["@types/node", "npm:18.0.0"],\
             ["@typescript-eslint/eslint-plugin", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:5.30.0"],\
             ["@typescript-eslint/parser", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:5.30.0"],\
             ["clean-webpack-plugin", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:3.0.0"],\
             ["copy-webpack-plugin", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:7.0.0"],\
             ["css-loader", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:5.2.7"],\
-            ["dotenv", "npm:16.0.1"],\
             ["dotenv-webpack", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:7.1.1"],\
             ["eslint", "npm:7.32.0"],\
             ["eslint-config-prettier", "virtual:59463bba346458939dd4ae4e1fd9173c14f626387ba347939513ee21f7926b18faa671286f189286cdba63d25273d060d5b9bc89c8c625c74c1aa626903cff37#npm:8.5.0"],\
