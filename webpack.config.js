@@ -15,6 +15,10 @@ const baseConfig = {
                 use: ['style-loader', 'css-loader'],
             },
             {
+                test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
+                type: 'asset/resource',
+            },
+            {
                 test: /\.ts?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
