@@ -1,0 +1,27 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #fff;
+    background: #17181c;
+    font-family: sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.root {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.main-container {
+    display: flex;
+}
