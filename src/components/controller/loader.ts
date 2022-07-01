@@ -1,14 +1,5 @@
-import { Constants } from '../../constants';
 import { LoaderInterface, SettingsInterface } from '../../interfaces';
-import {
-    settingsOptions,
-    settingsEndpoint,
-    callbackType,
-    resType,
-    callbackArgument,
-    sourcesRequest,
-    newsRequest,
-} from '../../types';
+import { settingsOptions } from '../../types';
 
 class Loader implements LoaderInterface {
     baseLink;
@@ -19,9 +10,9 @@ class Loader implements LoaderInterface {
         this.options = options;
     }
 
-    getResp(
+    getResp<T>(
         { endpoint, options = {} }: SettingsInterface,
-        callback: callbackType<callbackArgument> = () => {
+        callback: (data: T) => void = () => {
             console.error('No callback for GET response');
         }
     ): void {
@@ -30,7 +21,7 @@ class Loader implements LoaderInterface {
 
     errorHandler(res: Response) {
         if (!res.ok) {
-            if (res.status === Constants.ERROR_401 || res.status === Constants.ERROR_404)
+            if (res.status === 401 || res.status === 404)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
@@ -38,7 +29,7 @@ class Loader implements LoaderInterface {
         return res;
     }
 
-    makeUrl(options: settingsOptions, endpoint: settingsEndpoint) {
+    makeUrl(options: settingsOptions, endpoint: string) {
         const urlOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
@@ -49,16 +40,11 @@ class Loader implements LoaderInterface {
         return url.slice(0, -1);
     }
 
-    load(
-        method: string,
-        endpoint: settingsEndpoint,
-        callback: callbackType<sourcesRequest | newsRequest>,
-        options: settingsOptions = {}
-    ): void {
+    load<T>(method: string, endpoint: string, callback: (data: T) => void, options: settingsOptions = {}): void {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
-            .then((res: resType) => res.json())
-            .then(<T extends sourcesRequest | newsRequest>(data: T) => callback(data))
+            .then((res) => res.json())
+            .then(callback)
             .catch((err: Error) => console.error(err));
     }
 }

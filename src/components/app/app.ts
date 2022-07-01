@@ -1,4 +1,4 @@
-import { callbackArgument, newsRequest, sourcesRequest } from '../../types';
+import { newsRequest, sourcesRequest } from '../../types';
 import AppLoader from '../controller/controller';
 import { AppView } from '../view/appView';
 
@@ -15,8 +15,10 @@ class App {
         const sources = document.querySelector('.sources');
 
         if (sources !== null) {
-            sources.addEventListener('click', (e) => this.controller.getNews(e, (data) => this.view.drawNews(data)));
-            this.controller.getSources((data) => this.view.drawSources(data));
+            sources.addEventListener('click', (e) =>
+                this.controller.getNews(e, (data: newsRequest) => this.view.drawNews(data))
+            );
+            this.controller.getSources((data: sourcesRequest) => this.view.drawSources(data));
         } else {
             return;
         }
