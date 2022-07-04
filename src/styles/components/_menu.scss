@@ -1,0 +1,43 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../animations/index' as *;
+
+.open {
+    display: block;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: menu;
+
+    &__item {
+        @include button-style; 
+    }
+    
+    &__item:hover,
+    &__item:focus {
+        border-color: #FF4D0D;
+        color: #ff956e;
+        box-shadow: 0 0.5em 0.5em -0.4em #FF4D0D;
+        transform: translateY(-0.25em);
+    }
+    
+    &__item-name {
+        font-weight: 400;
+        white-space: nowrap;
+    }
+
+    &__button {
+        @include button-style;
+    }
+
+    &__item[data-hidden=true] {
+        display: none;
+    }
+
+    @media (min-width: $breakpoint-phone) and (max-width: ($breakpoint-tablet - 1px)) {
+        display: none;
+    }
+}

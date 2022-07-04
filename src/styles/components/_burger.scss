@@ -1,0 +1,41 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.burger-logo {
+    display: none;
+    flex-direction: column;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    &__span {
+        background: #30c5ff;
+        margin: 4px 0;
+        height: 2px;
+        width: 80%;
+        transition: 0.2s cubic-bezier(0.34, 0.7, 1, 1);
+    }
+
+    @media (min-width: $breakpoint-phone) and (max-width: ($breakpoint-tablet - 1px)) {
+        &{
+            display: flex;
+        }
+
+        &__input[type=checkbox] {
+            display: none;
+        }
+
+        &__input[type=checkbox]:checked {
+            .burger-logo__span:nth-of-type(1) {
+                transform: translate(-40%, 500%) rotatez(90deg);
+            }
+            .burger-logo__span:nth-of-type(2) {
+                transform: rotatez(90deg);
+            }
+            
+            .burger-logo__span:nth-of-type(3) {
+                transform: translate(40%, -500%) rotatez(90deg);
+            }
+        }
+    }
+}

@@ -1,0 +1,84 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 4rem;
+
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        padding-top: 63px;
+        font-size: 40px;
+        font-weight: 800;
+    }
+    
+    &__title {
+        @include text-setting($font-size: 32px);
+        color: #f1cdb3;
+    }
+    
+    &__subtitle {
+        @include text-setting($family: Arial, $font-size: 13px, $line: 15px);
+        margin-top: 5px;
+        margin-left: 4px;
+        letter-spacing: 0.1em;
+        color: $color-white;
+        padding-top: 3px;
+    }
+
+    @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+        & {
+           height: 90px; 
+        }
+
+        &__logo {
+            display: flex;
+            flex-direction: column;
+            padding-top: 63px;
+        }
+        
+        &__title {
+            @include text-setting($font-size: 30px);
+            text-align: justify;
+            color: #f1cdb3;
+        }
+        
+        &__subtitle {
+            @include text-setting($family: Arial, $font-size: 13px, $line: 15px);
+            margin-top: 5px;
+            margin-left: 4px;
+            letter-spacing: 0.1em;
+            color: $color-white;
+            padding-top: 3px;
+        }
+    }
+
+    @media (min-width: $breakpoint-phone) and (max-width: $breakpoint-tablet) {
+        & {
+           justify-content: space-between;
+        }
+
+        &__logo {
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+            padding: 0;
+        }
+        
+        &__title {
+            @include text-setting($font-size: 30px);
+            text-align: justify;
+            color: #f1cdb3;
+        }
+        
+        &__subtitle {
+            @include text-setting($family: Arial, $font-size: 13px, $line: 15px);
+            letter-spacing: 0.1em;
+            color: $color-white;
+        }
+    }
+}
