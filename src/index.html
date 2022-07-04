@@ -4,26 +4,48 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>NewsPortal</title>
     </head>
     <body>
-        <header>
-            <h1>News Portal</h1>
+        <!-- <div class="dark"></div> -->
+        <header class="header-container">
+            <label class="burger-logo" for="check">
+                <input class="burger-logo__input" type="checkbox" id="check">
+                <span class="burger-logo__span"></span>
+                <span class="burger-logo__span"></span>
+                <span class="burger-logo__span"></span>
+            </label>
+            <h1 class="header__logo">News Portal</h1>
         </header>
-        <main>
-            <div class="sources buttons"></div>
-            <div class="news"></div>
-        </main>
-        <footer>
-            <p class="copyright">
+        <div class="root">
+            
+            <aside class="menu">
+                <div class="sort"></div>
+                <div class="lang"></div>
+                <div class="articles"></div>
+                <div class="tags">
+                    <ul class="tags__list">
+                    </ul>
+                </div>
+            </aside>
+            <main class="main-container">
+                <section class="news">
+                </section>
+            </main>
+        </div>
+        <footer class="footer-container">
+            <p class="content ">
+                Pickman
+            </p>
+            <p class="content copyright">
                 Copyright <a href="https://newsapi.org">NewsAPI</a>
             </p>
+            <div class="rs-logo"></div>
         </footer>
 
         <template id="sourceItemTemp">
-            <div class="source__item">
-                <span class="source__item-name"></span>
-            </div>
+            <li class="tags__item">
+                <span class="tags__item-name"></span>
+            </li>
         </template>
 
         <template id="newsItemTemp">
