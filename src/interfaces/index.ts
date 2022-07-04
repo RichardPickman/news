@@ -29,6 +29,11 @@ export interface AppViewInterface {
     drawSources: (data: sourcesRequest) => void;
 }
 
+export interface MenuInterface {
+    show: () => void;
+    close: () => void;
+}
+
 export interface SourceInterface {
     draw: (data: sourcesItems[]) => void;
 }

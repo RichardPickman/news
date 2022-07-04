@@ -6,16 +6,18 @@ class AppController extends AppLoader {
         super.getResp({ endpoint: ApiEndpoints.Sources }, callback);
     }
 
-    getNews<T>(e: Event, callback: (data: T) => void) {
+    getNews<T>(e: Event, callback: (data: T) => void, endpoint: ApiEndpoints = ApiEndpoints.Top) {
+        e.preventDefault();
+
         let target = e.target as HTMLElement;
         const newsContainer = e.currentTarget as HTMLElement;
 
         while (target !== newsContainer) {
-            if (target.classList.contains('source__item')) {
+            if (target.classList.contains('tags__item')) {
                 const sourceId = target.getAttribute('data-source-id') as string;
                 if (newsContainer.getAttribute('data-source') !== sourceId) {
                     newsContainer.setAttribute('data-source', sourceId);
-                    super.getResp({ endpoint: ApiEndpoints.Everything, options: { sources: sourceId } }, callback);
+                    super.getResp({ endpoint, options: { sources: sourceId } }, callback);
                 }
                 return;
             }

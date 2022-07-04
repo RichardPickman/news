@@ -1,6 +1,7 @@
 import './news.css';
 import { newsType } from '../../../types';
 import { NewsInteface } from '../../../interfaces';
+import placeholder from '../../../assets/img/news_placeholder.png';
 
 class News implements NewsInteface {
     draw(data: newsType[]) {
@@ -15,7 +16,7 @@ class News implements NewsInteface {
             if (idx % 2) (newsClone.querySelector('.news__item') as HTMLElement).classList.add('alt');
 
             (newsClone.querySelector('.news__meta-photo') as HTMLElement).style.backgroundImage = `url(${
-                item.urlToImage || '/assets/img/news_placeholder.jpg'
+                item.urlToImage || placeholder
             })`;
             (newsClone.querySelector('.news__meta-author') as HTMLElement).textContent =
                 item.author || item.source.name;

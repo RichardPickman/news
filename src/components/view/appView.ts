@@ -1,7 +1,7 @@
 import { SourceInterface, NewsInteface, AppViewInterface } from '../../interfaces';
 import { newsRequest, sourcesRequest } from '../../types';
-import News from './news/news';
 import Sources from './sources/sources';
+import News from './news/news';
 
 export class AppView implements AppViewInterface {
     news: NewsInteface;

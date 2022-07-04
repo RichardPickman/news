@@ -2,8 +2,8 @@ import { LoaderInterface, SettingsInterface } from '../../interfaces';
 import { settingsOptions } from '../../types';
 
 class Loader implements LoaderInterface {
-    baseLink;
-    options;
+    readonly baseLink;
+    readonly options;
 
     constructor(baseLink: string, options: settingsOptions) {
         this.baseLink = baseLink;

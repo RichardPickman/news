@@ -1,4 +1,5 @@
 export enum ApiEndpoints {
-    Everything = 'Everything',
-    Sources = 'Sources',
+    Everything = 'everything',
+    Sources = 'sources',
+    Top = 'top-headlines',
 }
